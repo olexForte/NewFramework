@@ -1,0 +1,220 @@
+#Your company;;;
+zip code of your primary business location;90302;inputbox;
+the name of your business;IONREGHandy;rnddatainputbox
+;;;
+My business is not listed;;button
+;;;
+#Your Protection;;;
+General Liability;TRUE;checkbox;
+Compensation;TRUE;checkbox;
+;;;
+#Company History;;;
+business begin under current ownership;11.02.1998;inputboxwithtab
+years experience;15;inputbox
+How many people work;2;inputboxwithtab;
+owners or officers;1;inputbox
+part time employees;0;inputbox
+clerical office support staff;0;inputbox
+current largest planned job;10000;inputboxwithtab
+what was your largest job;10000;inputbox
+payroll for owners and officers;100000;inputbox
+Please describe;test;textarea;1
+payroll for your field employees;100000;inputbox
+Please describe;test;textarea;2
+;;;
+#Your Information;;;
+Your First Name;IONREGHandy;rnddatainputbox
+Your Last Name;IONREGHandy;rnddatainputbox
+Email;IONREGHandy@test.com;rnddatainputbox
+Contact Phone Number;7686949877;rnddatainputbox
+;;;
+#Your Locations
+based in your home;FALSE;yesnoradiobutton
+dogs;FALSE;yesnoradiobutton
+Address;901 E FAIRVIEW BLVD UNIT 2121;rnddatainputbox
+City;Inglewood;inputbox
+None of the above;;addressradio;
+;;;
+#Business Basics 35%
+Please Describe Your Business Operations;test;textarea
+business website address;none;inputbox
+Type of Business;Association;dropdownbox
+company filed as a Corporation;FALSE;yesnoradiobutton
+company filed as a Non-Profit;FALSE;yesnoradiobutton
+next fiscal year;200000;inputboxwithtab
+current fiscal year;200000;inputboxwithtab
+prior fiscal year;100000;inputboxwithtab
+any international clients;FALSE;yesnoradiobutton
+own more than 50% of another business;FALSE;yesnoradiobutton
+ever been changed;FALSE;yesnoradiobutton
+any changes to your primary operation;FALSE;yesnoradiobutton
+performed any work outside your primary state;FALSE;yesnoradiobutton
+business ever purchased or acquired;FALSE;yesnoradiobutton
+construction activity planned;FALSE;yesnoradiobutton
+business involve subcontracting work to others;FALSE;yesnoradiobutton
+use temporary labor;FALSE;yesnoradiobutton
+temporary labor from a temp;FALSE;yesnoradiobutton
+;;
+#Business Details 40%
+licensed where required;TRUE;yesnoradiobutton
+have a B License;TRUE;yesnoradiobutton
+any work involving new residential properties;FALSE;yesnoradiobutton
+storefront or retail location;FALSE;yesnoradiobutton;
+New Construction;0;inputboxwithtab
+Maintenance work;0;inputboxwithtab
+Renovation Work;100;inputboxwithtab
+Commercial;0;inputboxwithtab
+Residential;100;inputboxwithtab
+home remodeling;FALSE;yesnoradiobutton;
+Structural;50;inputboxwithtab
+Non-Structural;50;inputboxwithtab
+Single family;100;inputboxwithtab
+Multi-dwelling unit;0;inputboxwithtab
+;;
+#Contractor Services 5
+Finish & Trim;TRUE;checkbox
+Finish & Trim;10;inputboxwithtab
+Lighting Installation;TRUE;checkbox
+Lighting Installation;10;inputboxwithtab
+Drywall Taping;TRUE;checkbox
+Drywall Taping;10;inputboxwithtab
+Exterior;TRUE;checkbox
+Exterior;25;inputboxwithtab
+Appliance;TRUE;checkbox
+Appliance;25;inputboxwithtab
+Fence Installation;TRUE;checkbox
+Fence Installation;20;inputboxwithtab
+airport;FALSE;yesnoradiobutton
+;;;
+#Service Details
+install/finish tile;FALSE;yesnoradiobutton
+hardwood floor;FALSE;yesnoradiobutton
+work performed outside;10;inputboxwithtab
+Ladders;TRUE;reversecheckbox
+Train all employees on proper ladder use;TRUE;reversecheckbox
+;;;
+#Contractor Services
+Rental of Equipment to Others;TRUE;checkbox
+Condo or Townhouse work;TRUE;checkbox
+Structural Work;TRUE;checkbox
+or safety code violations;FALSE;yesnoradiobutton
+Any catastrophe exposure;FALSE;yesnoradiobutton
+any materials considered to be hazardous;FALSE;yesnoradiobutton
+None of the above;TRUE;reversecheckbox;1
+None of the Above;TRUE;reversecheckbox;1
+None of the above;TRUE;reversecheckbox;2
+None of the above;TRUE;reversecheckbox;3
+None of the above;TRUE;reversecheckbox;4
+to report or permit the storage;FALSE;yesnoradiobutton
+None of the above;TRUE;reversecheckbox;5
+None of the above;TRUE;reversecheckbox;6
+None of the above;TRUE;reversecheckbox;7
+comment on any other information regarding your experience;test;textarea
+;;;
+#Insurance History
+been in business for more than;FALSE;yesnoradiobutton
+had Liability Insurance continuously;FALSE;yesnoradiobutton;
+had any active insurance policies within;FALSE;yesnoradiobutton
+claims against your insurance in the past 5 years;FALSE;yesnoradiobutton
+prior insurance cancelled;FALSE;yesnoradiobutton
+relating to sexual abuse or molestation;FALSE;yesnoradiobutton
+any licensing authority taken any action against you;FALSE;yesnoradiobutton
+bankruptcy within the past mandated number of years;FALSE;yesnoradiobutton
+Has any lawsuit ever been filed;FALSE;yesnoradiobutton
+Is your company aware of any facts;FALSE;yesnoradiobutton
+any construction defect claims;FALSE;yesnoradiobutton
+will you allow your license to be used;FALSE;yesnoradiobutton
+any operations related to any project insured;FALSE;yesnoradiobutton
+partner been convicted of a felony;FALSE;yesnoradiobutton
+Have you had any active insurance;FALSE;yesnoradiobutton
+policy or coverage been declined, cancelled or non-renewed;FALSE;yesnoradiobutton
+;;;
+#General Liability & Property Policy;;;
+additional insured endorsement;FALSE;yesnoradiobutton;
+waiver of subrogation endorsement;FALSE;yesnoradiobutton;
+wood-burning stoves;FALSE;yesnoradiobutton
+functioning and operational fire;FALSE;yesnoradiobutton
+protected by an automatic sprinkler;FALSE;yesnoradiobutton
+used exclusively for storage;FALSE;yesnoradiobutton
+coverage for your building;FALSE;yesnoradiobutton
+Square feet of space;500;inputbox;
+Rent;TRUE;reversedradio;
+Low rise building five stories;TRUE;reversedradio;
+Number of stories;2;inputbox;
+building was built;2000;inputbox;
+been at the current location;10;inputbox;
+Check here to decline coverage for your computers;TRUE;checkbox
+Contractor Tools & Equipment Coverage;FALSE;yesnoradiobutton
+Electronic Data Processing;FALSE;yesnoradiobutton
+vehicles commercially owned;FALSE;yesnoradiobutton;
+include coverage for Hired/Non-Owned Auto Liability;FALSE;yesnoradiobutton;
+;;;
+#Worker's Compensation
+Federal Employer ID;102579613;inputbox
+aircraft;FALSE;yesnoradiobutton
+watercraft;FALSE;yesnoradiobutton
+leased from a PEO;FALSE;yesnoradiobutton
+any owned vehicles;FALSE;yesnoradiobutton
+maximum number of employees per shift;3;inputbox
+experience rated;FALSE;yesnoradiobutton
+group transportation provided;FALSE;yesnoradiobutton
+operations include digging;FALSE;yesnoradiobutton
+required safety guarding on all machinery;FALSE;yesnoradiobutton
+None of the Above;TRUE;reversecheckbox;1
+provide material handling;FALSE;yesnoradiobutton
+None of the above;TRUE;reversecheckbox;1
+personal protective equipment is not utilized;test;textarea
+industrial or nuclear work;0;inputboxwithtab
+written safety program;FALSE;yesnoradiobutton
+Explain why a written safety program;test;textarea
+perform any millwright work;FALSE;yesnoradiobutton
+present or discontinued operations involving the storage;FALSE;yesnoradiobutton
+concrete or cement distribution;FALSE;yesnoradiobutton
+major household appliances;FALSE;yesnoradiobutton
+any employees regularly work;FALSE;yesnoradiobutton
+engage in extermination or pest control;FALSE;yesnoradiobutton
+geophysical exploration;FALSE;yesnoradiobutton
+metal erection;FALSE;yesnoradiobutton
+clean or pump any sewers;FALSE;yesnoradiobutton
+do any ship repair;FALSE;yesnoradiobutton
+day labor or casual labor;FALSE;yesnoradiobutton
+any OSHA violations in the last 5 years;FALSE;yesnoradiobutton
+maintain any towers;FALSE;yesnoradiobutton
+service or repair highway lighting;FALSE;yesnoradiobutton
+crop spraying;FALSE;yesnoradiobutton
+do any work in connection with any pipeline;FALSE;yesnoradiobutton
+Percent Ownership;100;inputbox
+any employees in states other than the one;FALSE;yesnoradiobutton
+;;;
+#Worker's Compensation Details
+What percentage of this business do you own;100;inputboxwithtab
+self-insured;FALSE;yesnoradiobutton
+any tax liens;FALSE;yesnoradiobutton
+NFIB;FALSE;yesnoradiobutton
+written safety program;FALSE;yesnoradiobutton
+police or other emergency personnel;FALSE;yesnoradiobutton
+health plans provided;FALSE;yesnoradiobutton
+Are physicals required;FALSE;yesnoradiobutton
+any employees under 16;FALSE;yesnoradiobutton
+any employees with physical handicaps;FALSE;yesnoradiobutton
+work sublet;FALSE;yesnoradiobutton
+labor interchange;FALSE;yesnoradiobutton
+spouse;FALSE;yesnoradiobutton
+seasonal employees;FALSE;yesnoradiobutton
+monetary renumeration;FALSE;yesnoradiobutton
+volunteers;FALSE;yesnoradiobutton
+predominantly work at home;FALSE;yesnoradiobutton
+employees travel;FALSE;yesnoradiobutton
+group transportation;FALSE;yesnoradiobutton
+work underground;FALSE;yesnoradiobutton
+tunneling;FALSE;yesnoradiobutton
+oil and gas drilling;FALSE;yesnoradiobutton
+cofferdams;FALSE;yesnoradiobutton
+hazardous material;FALSE;yesnoradiobutton
+watercraft;FALSE;yesnoradiobutton
+governed by the Defense Base Act;FALSE;yesnoradiobutton
+professional sports team;FALSE;yesnoradiobutton
+athletic teams;FALSE;yesnoradiobutton
+drive personally owned;FALSE;yesnoradiobutton
+;;
+#Finish;;;

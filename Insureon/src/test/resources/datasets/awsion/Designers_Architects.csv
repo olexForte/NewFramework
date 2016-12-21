@@ -1,0 +1,136 @@
+#Your company;;;
+What is the zip code;75075;inputbox;
+the name of your business;IONREGArch;rnddatainputbox;
+;;;
+My business is not listed;;button
+;;;
+#Your Protection;;;
+General Liability and Business Property;TRUE;checkbox;
+Compensation;TRUE;checkbox;
+Professional Liability;TRUE;checkbox;
+;;;
+#Company History;;;
+What date did your business begin;01.01.2010;inputboxwithtab;
+How many years experience;15;inputboxwithtab;
+How many people work;1;inputbox;
+total annual payroll;50000;inputbox;
+;;;
+#Your Account;;;
+Your First Name;IONREGArch;rnddatainputbox;
+Your Last Name;IONREGArch;rnddatainputbox;
+Email;IONREGArch@test.com;rnddatainputbox;
+Contact Phone Number;4768245455;rnddatainputbox;
+;;;
+#Locations;;;
+based in your home;FALSE;yesnoradiobutton;
+Address Line 1;1721 W Plano Pkwy;inputbox;
+Address Line 2;5524;rnddatainputbox;
+City;Plano;inputbox;
+
+;;;
+#Service Details;;;
+Design & Observation;100;inputboxwithtab;
+Private Owners;100;inputboxwithtab;
+;;;
+#Business Basics;;;
+business website address;none;inputbox;
+business registered;Corporation;dropdownbox;
+Non-Profit;TRUE;yesnoradiobutton;
+next fiscal year;150000;inputbox;
+current fiscal year;150000;inputbox;
+prior fiscal year;150000;inputbox;
+2 fiscal years ago;150000;inputbox;
+international clients;FALSE;yesnoradiobutton;
+own more than 50% of another business;FALSE;yesnoradiobutton
+;;;
+#Industries;;;
+Office Building/Low Rise;100;inputboxwithtab;
+subcontractors provide any of the following;FALSE;yesnoradiobutton;
+operations involve any of the following;FALSE;yesnoradiobutton;
+None of the above;TRUE;checkbox;
+any licensed professional within the firm have an ownership interest;FALSE;yesnoradiobutton;
+;;;
+#Insurance History;;;
+active insurance policies within the last 12 months;TRUE;yesnoradiobutton;
+continuous Workers;TRUE;yesnoradiobutton;
+How many years of continuous prior;5;inputbox;
+General Liability;TRUE;checkbox;
+Compensation;TRUE;checkbox;
+Professional Liability;TRUE;checkbox;
+Name of Carrier;test;inputbox;1
+Expiration Date;09.15.2015;inputboxwithtab;1
+Limits;1000000;inputbox;1
+Name of Carrier;test;inputbox;2
+Expiration Date;09.15.2015;inputboxwithtab;2
+Limits;1000000;inputbox;2
+any Errors or Omissions Insurance;FALSE;yesnoradiobutton;
+professional liability claims;FALSE;yesnoradiobutton;
+company had any claims in the past 5 years;FALSE;yesnoradiobutton;
+or demands for arbitration;FALSE;yesnoradiobutton;
+aware of any act;FALSE;yesnoradiobutton;
+your company ever been declined for Workers;FALSE;yesnoradiobutton;
+undisputed and unpaid workers compensation premium;FALSE;yesnoradiobutton;
+any current or anticipated debt for unpaid premiums;FALSE;yesnoradiobutton;
+have you had employees working without coverage;FALSE;yesnoradiobutton;
+;;;
+#General Liability & Property Policy;;;
+Employment Practices Liability?;FALSE;yesnoradiobutton;
+Data Breach coverage;FALSE;yesnoradiobutton;
+coverage for your building;FALSE;yesnoradiobutton;
+Square feet of space;2000;inputboxwithtab;
+total square footage;2000;inputboxwithtab;
+Rent;TRUE;checkbox;
+Low rise building five stories or less;TRUE;checkbox;
+Number of stories;1;inputbox;
+Year the building was built;2000;inputbox;
+any vehicles commercially owned;FALSE;yesnoradiobutton;
+quote to include coverage for Hired;FALSE;yesnoradiobutton;
+or distribute any tangible goods;FALSE;yesnoradiobutton;
+;;;
+#Worker's Compensation;;;
+Please indicate the amount of Employers;$100,000/$500,000/$100,000;dropdownbox;
+watercraft;FALSE;yesnoradiobutton;
+work for the government;FALSE;yesnoradiobutton;
+leased from a PEO;FALSE;yesnoradiobutton;
+have any owned vehicles;FALSE;yesnoradiobutton;
+Are you experience rated;FALSE;yesnoradiobutton;
+Percent Ownership;100;inputbox;
+Estimated Annual Compensation;50000;inputbox;
+Drivers & Their Helpers;1;doubledinputbox;1
+Drivers & Their Helpers;50000;doubledinputbox;2
+any employees in states other than the one;FALSE;yesnoradiobutton;
+None of the Above;TRUE;checkbox;
+None of the above;TRUE;checkbox;
+approximate percentage of service;0;inputboxwithtab;
+;;;
+#Errors And Omissions;;;
+amount of errors and omissions coverage;$1,000,000/ $1,000,000;dropdownbox;
+Deductible Desired;$1,000;dropdownbox;
+what are the estimated sales;10000;inputbox;
+business use a written contract;Always (100%);dropdownbox;
+Yes;TRUE;checkbox;1
+Yes;TRUE;checkbox;2
+Professional Association Contract;100;inputboxwithtab;
+completed a condo project;FALSE;yesnoradiobutton;
+procedures to evaluate and screen;TRUE;yesnoradiobutton;
+have any outstanding fee disputes;TRUE;yesnoradiobutton;
+principal of your firm a licensed architect;TRUE;yesnoradiobutton;
+Name;test;inputbox;11
+Education;test;inputbox;
+Experience;15;inputbox;
+Years with Company;5;inputbox;
+procedure for monitoring & collecting;TRUE;yesnoradiobutton;
+contracts reviewed by the company;Always;dropdownbox;
+belong to any professional associations;TRUE;yesnoradiobutton;
+Other;TRUE;checkbox;
+derived from repeat clients;25;inputboxwithtab;
+subcontracting work to others;FALSE;yesnoradiobutton;
+might reasonably be expected to give rise;FALSE;yesnoradiobutton;
+declined for Errors & Omissions;FALSE;yesnoradiobutton;
+lawsuits or actions;FALSE;yesnoradiobutton;
+financial loss as a result of an error or omission;FALSE;yesnoradiobutton;
+cease and desist orders concerning content;FALSE;yesnoradiobutton;
+Been the subject of a governmental disciplinary action;FALSE;yesnoradiobutton;
+investigation or action by any regulatory or administrative agency;FALSE;yesnoradiobutton;
+;;;
+#Finish;;;

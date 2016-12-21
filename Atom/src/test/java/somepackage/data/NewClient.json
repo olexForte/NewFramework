@@ -1,0 +1,18 @@
+[
+  {
+    "businessUnit" : "TechInsurance",
+    "businessName" : "ABC",
+    "esourceName" : "",
+    "brand" : "TechInsurance",
+    "firstName" : "",
+    "lastName" : "",
+    "primaryEmail" : "",
+    "phone" : "",
+    "streetOne" : "",
+    "streetTwo" : "",
+    "city" : "Chicago",
+    "state" : "Illinois",
+    "county" : "Cook County",
+    "zip" : "60602"
+  }
+]

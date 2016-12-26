@@ -2,10 +2,9 @@ package somepackage.pages.awsion;
 
 import engine.helpers.AbstractPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.log4testng.Logger;
 import somepackage.elements.*;
-
+import somepackage.glue.awsion.Base;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,12 +17,12 @@ import java.util.stream.Collectors;
 public class AwsIonQuestionnairePage extends AbstractPage
 {
     By questionnaireInput;
-    By businessDropdown = By.id("SelectedClassId_chosen");
+    By businessDropdown = By.xpath("//*[@id = 'SelectedClassId']");
     By gettingStartedBtn = By.xpath("//span[text() = 'Getting Started']");
     By forwardArrow = By.xpath("//img[@alt = 'Next']/../..");
     By submitApplicationButton = By.xpath("//span[text() = 'Submit Application']");
     By generatedClientID = By.xpath("//span[@class = 'client_id_frame'][contains(., 'Client ID')]");
-
+    By compilingWindow = By.xpath("//div[contains(., 'We're Compiling Quotes now')]");
 
     public void selectBusiness(String business)
     {
@@ -58,12 +57,17 @@ public class AwsIonQuestionnairePage extends AbstractPage
 
                     try
                     {
+                        Base.SCENARIO.write("Caption: " + separatedList.get(0) + "\n" + "Value: " +
+                                separatedList.get(1) + "\n" + "Element Type: " + separatedList.get(2));
+
                         switch (separatedList.get(2))
                         {
                             case "input":
                             case "inputbox":
-                            case "rnddatainputbox":
                                 new Input(driver).setValue(separatedList.get(0), separatedList.get(1), index);
+                                break;
+                            case "rnddatainputbox":
+                                new Input(driver).setValueWithRandomTail(separatedList.get(0), separatedList.get(1), index, 5);
                                 break;
                             case "inputboxwithtab":
                                 new Input(driver).setValueAndTab(separatedList.get(0), separatedList.get(1), index);
@@ -97,7 +101,7 @@ public class AwsIonQuestionnairePage extends AbstractPage
                     {
                         Element.GetByBy(forwardArrow).click();
 
-                        Thread.sleep(7000);
+                        Thread.sleep(Base.TRANSITION_DELAY);
 
                         continue;
                     }
@@ -125,6 +129,12 @@ public class AwsIonQuestionnairePage extends AbstractPage
 
     public String getGeneratedID()
     {
+        try {
+            Thread.sleep(Base.QUOTES_DELAY);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         String id = Element.GetByBy(generatedClientID).getText();
         id = id.split(":")[1].trim();
 

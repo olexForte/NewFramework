@@ -1,7 +1,7 @@
 package engine.utils.elementUtils;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import engine.drivers.DriverInit;
+//import com.gargoylesoftware.htmlunit.ElementNotFoundException;
+//import engine.drivers.DriverInit;
 import engine.utils.seleniumUtils.WaitHelper;
 import engine.utils.SystemUtils;
 import org.openqa.selenium.*;
@@ -29,7 +29,8 @@ public class ElementGetters extends BaseElement
 
         try
         {
-            element = waits.waitForElement(elem, 7);
+//            element = waits.waitForElement(elem, 7);
+            element = driver.findElement(elem);
         }
         catch(Exception e)
         {

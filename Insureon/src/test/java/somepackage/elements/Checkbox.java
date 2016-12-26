@@ -1,11 +1,9 @@
 package somepackage.elements;
 
 import engine.utils.elementUtils.ElementGetters;
-import org.apache.commons.logging.Log;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.testng.log4testng.Logger;
+import somepackage.glue.awsion.Base;
 
 /**
  * Created by Andrity Zhuk on 12/9/2016.
@@ -41,8 +39,10 @@ public class Checkbox extends ElementGetters
      *                can be different from the real caption value is
      * @param index - used to avoid confusion if a couple of similar elements are found on the page
      */
-    public void checkReversed(String caption, int index)
+    public void checkReversed(String caption, int index) throws InterruptedException
     {
+        Thread.sleep(Base.SLEEP_DELAY);
+
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).click();
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).sendKeys(Keys.TAB);
     }

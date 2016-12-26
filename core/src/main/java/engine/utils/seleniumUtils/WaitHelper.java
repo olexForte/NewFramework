@@ -58,15 +58,17 @@ public class WaitHelper
         this.driver.manage().timeouts().pageLoadTimeout(time, SECONDS);
     }
 
-    public void waitForElementPresent(final WebElement element, int timeout)
+    public boolean waitForElementPresent(final WebElement element, int timeout)
     {
+        Boolean present = false;
+
         try
         {
             WebDriverWait wait = (WebDriverWait) new WebDriverWait(this.driver, timeout)
                     .ignoring(StaleElementReferenceException.class)
                     .withTimeout(timeout, SECONDS)
                     .pollingEvery(1, SECONDS);
-            wait.until(new ExpectedCondition<Boolean>() {
+            present = wait.until(new ExpectedCondition<Boolean>() {
                 public Boolean apply(WebDriver driver) {
                     return element.isDisplayed();
                 }
@@ -76,27 +78,24 @@ public class WaitHelper
         {
             e.printStackTrace();
         }
+
+        return present;
     }
 
     public WebElement waitForElement(final By by, int timeout)
     {
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(this.driver, timeout)
                 .ignoring(StaleElementReferenceException.class)
-                .ignoring(ElementNotFoundException.class)
                 .withTimeout(timeout, SECONDS)
                 .pollingEvery(1, SECONDS);
 
-        WebElement element = wait.until(new ExpectedCondition<WebElement>()
-        {
-            public WebElement apply(WebDriver driver)
-            {
-                try {
-                    wait(timeout);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return driver.findElement(by);
-            }
+        WebElement element = wait.until((ExpectedCondition<WebElement>) driver -> {
+//                try {
+//                    wait(timeout);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+            return driver.findElement(by);
         });
 
         return element;

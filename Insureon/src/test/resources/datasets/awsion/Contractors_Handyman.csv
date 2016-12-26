@@ -149,7 +149,7 @@ Electronic Data Processing;FALSE;yesnoradiobutton
 vehicles commercially owned;FALSE;yesnoradiobutton;
 include coverage for Hired/Non-Owned Auto Liability;FALSE;yesnoradiobutton;
 ;;;
-#Worker's Compensation
+#Worker's Compensation 80%
 Federal Employer ID;102579613;inputbox
 aircraft;FALSE;yesnoradiobutton
 watercraft;FALSE;yesnoradiobutton

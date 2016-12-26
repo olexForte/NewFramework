@@ -10,10 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import sun.util.logging.PlatformLogger;
-
-import java.util.Collection;
 
 /**
  * Created by Andrity Zhuk on 12/2/2016.
@@ -59,7 +55,7 @@ public class DriverInit
                 System.setProperty("webdriver.chrome.driver", utils.get_chrome_path());
 
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.addArguments("no-sandbox");
+//                chromeOptions.addArguments("no-sandbox");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
                 capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 

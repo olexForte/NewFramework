@@ -1,12 +1,10 @@
 package somepackage.glue.awsion;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import engine.drivers.DriverInit;
 import cucumber.api.java.Before;
 import engine.utils.SystemUtils;
-import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 
 import java.util.Properties;
 
@@ -18,10 +16,30 @@ public class Base
     DriverInit driverInit;
     public static final String ENV = System.getProperty("env");
     public static final Properties PROPERTIES = SystemUtils.loadProperties(ENV, System.getProperty("propertiesFile"));
+    public static Integer SLEEP_DELAY = null;
+    public static Integer QUOTES_DELAY = null;
+    public static Integer TRANSITION_DELAY = null;
+    public static Scenario SCENARIO;
+
+    static
+    {
+        try
+        {
+            SLEEP_DELAY = Integer.parseInt(PROPERTIES.getProperty("delay.sleep"));
+            QUOTES_DELAY = Integer.parseInt(PROPERTIES.getProperty("delay.quotes"));
+            TRANSITION_DELAY = Integer.parseInt(PROPERTIES.getProperty("delay.transition"));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
 
     @Before
-    public void setUp()
+    public void setUp(Scenario scenario)
     {
+        this.SCENARIO = scenario;
+
         String browser = System.getProperty("browser");
 
         if (browser == null)
@@ -30,21 +48,12 @@ public class Base
         }
 
         this.driverInit = new DriverInit();
-        this.driverInit.set_driver(browser, "some scenario");
+        this.driverInit.set_driver(browser, "some SCENARIO");
     }
 
-//    @AfterClass
-//    public void tearDownTestNG(ITestResult result)
-//    {
-//        System.out.println("TEST RESULT");
-//        System.out.println(result.getTestName() + " " + result.getStatus());
-//    }
-
     @After
-    public void tearDown()
+    public void tearDown() throws InterruptedException
     {
-        System.out.println("TEST RESULT");
-
-        this.driverInit.close();
+//        this.driverInit.close();
     }
 }

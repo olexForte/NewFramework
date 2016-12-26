@@ -4,6 +4,7 @@ import engine.utils.elementUtils.ElementGetters;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import somepackage.glue.awsion.Base;
 
 /**
  * Created by Andrity Zhuk on 12/12/2016.
@@ -29,8 +30,10 @@ public class RadioButton extends ElementGetters
      *              since value in dataset can be different from what is actual value
      * @param index - used to avoid confusion if a couple of similar elements are found on the page
      */
-    public void setRadioTo(String caption, String value, int index)
+    public void setRadioTo(String caption, String value, int index) throws InterruptedException
     {
+        Thread.sleep(Base.SLEEP_DELAY);
+
         if (Boolean.parseBoolean(value))
         {
             value = "True";
@@ -55,7 +58,7 @@ public class RadioButton extends ElementGetters
      */
     public void setAddressRadioTo(String caption, int index) throws InterruptedException
     {
-        Thread.sleep(3000);
+        Thread.sleep(Base.SLEEP_DELAY);
 //        String captionString = caption.toLowerCase();
 //        captionString = captionString.substring(0, 1).toUpperCase() + captionString.substring(1);
 

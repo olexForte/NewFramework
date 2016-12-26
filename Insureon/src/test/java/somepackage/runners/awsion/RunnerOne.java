@@ -11,7 +11,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
     "src/test/resources/features/awsion/LoginToAwsIonStory.feature"
 },
         glue = "somepackage.glue.awsion",
-        format = {"json:target/cucumber.json", "html:target/Destination"})
+        format = {"json:target/cucumber_report/cucumber.json", "html:target/cucumber_report"})
 public class RunnerOne extends AbstractTestNGCucumberTests
 {
 }

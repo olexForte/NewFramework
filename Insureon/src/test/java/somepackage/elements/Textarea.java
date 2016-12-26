@@ -2,6 +2,7 @@ package somepackage.elements;
 
 import engine.utils.elementUtils.ElementGetters;
 import org.openqa.selenium.WebDriver;
+import somepackage.glue.awsion.Base;
 
 /**
  * Created by Andrity Zhuk on 12/13/2016.
@@ -27,6 +28,8 @@ public class Textarea extends ElementGetters
      */
     public void setValue(String caption, String value, int index) throws InterruptedException
     {
+        Thread.sleep(Base.SLEEP_DELAY);
+
         GetByXpath(String.format(XPATH, caption, index)).clear();
         GetByXpath(String.format(XPATH, caption, index)).sendKeys(value);
     }

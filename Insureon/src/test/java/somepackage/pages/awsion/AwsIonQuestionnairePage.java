@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class AwsIonQuestionnairePage extends AbstractPage
 {
     By questionnaireInput;
-    By businessDropdown = By.xpath("//*[@id = 'SelectedClassId']");
+    By businessDropdown = By.xpath("//*[@id = 'SelectedClassId_chosen']");
     By gettingStartedBtn = By.xpath("//span[text() = 'Getting Started']");
     By forwardArrow = By.xpath("//img[@alt = 'Next']/../..");
     By submitApplicationButton = By.xpath("//span[text() = 'Submit Application']");
@@ -119,6 +119,8 @@ public class AwsIonQuestionnairePage extends AbstractPage
         catch (NullPointerException e)
         {
             Logger.getLogger(AwsIonQuestionnairePage.class).error(separatedList.get(0));
+            System.out.println("Taking screenshot...");
+            Base.SCENARIO.embed(takeScreenshot("Screen"), "image/png");
         }
     }
 

@@ -1,5 +1,6 @@
 package engine.utils;
 
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -49,5 +50,10 @@ public class DataUtils
         }
 
         return stringBuffer.toString();
+    }
+
+    public long getCurrentTimeMillis()
+    {
+        return new Date().getTime();
     }
 }

@@ -256,20 +256,24 @@ public class AbstractPage
 //        return passed;
 //    }
 //
-//    //Takes screenshot
-    protected void take_screen(String file_name)
+    //Takes screenshot
+    protected byte[] takeScreenshot(String file_name)
     {
+        byte[] scrFile = null;
+
         try
         {
-            File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 
-            FileUtils.moveFile(scrFile, new File(utils.get_app_root() + File.separator + "src" +
-                    File.separator + "gather_student_info" + File.separator + "resources" + File.separator +
-                    "screenshots" + File.separator + file_name + ".png"));
+//            FileUtils.moveFile(scrFile, new File(utils.get_app_root() + File.separator + "src" +
+//                    File.separator + "gather_student_info" + File.separator + "resources" + File.separator +
+//                    "screenshots" + File.separator + file_name + ".png"));
         }
-        catch(IOException e)
+        catch(Exception e)
         {
             e.printStackTrace();
         }
+
+        return scrFile;
     }
 }

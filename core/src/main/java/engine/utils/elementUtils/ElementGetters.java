@@ -29,8 +29,8 @@ public class ElementGetters extends BaseElement
 
         try
         {
-//            element = waits.waitForElement(elem, 7);
-            element = driver.findElement(elem);
+            element = waits.waitForElement(elem, 7);
+//            element = driver.findElement(elem);
         }
         catch(Exception e)
         {

@@ -25,13 +25,13 @@ Please describe;test;textarea;2
 #Your Information;;;
 Your First Name;IONREGHandy;rnddatainputbox
 Your Last Name;IONREGHandy;rnddatainputbox
-Email;IONREGHandy@test.com;rnddatainputbox
-Contact Phone Number;7686949877;rnddatainputbox
+Email;IONREGHandy@test.com;inputbox
+Contact Phone Number;7686949877;inputbox
 ;;;
 #Your Locations
 based in your home;FALSE;yesnoradiobutton
 dogs;FALSE;yesnoradiobutton
-Address;901 E FAIRVIEW BLVD UNIT 2121;rnddatainputbox
+Address;901 E FAIRVIEW BLVD UNIT 2121;inputbox
 City;Inglewood;inputbox
 None of the above;;addressradio;
 ;;;

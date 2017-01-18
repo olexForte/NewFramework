@@ -1,4 +1,4 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 import engine.utils.elementUtils.ElementGetters;
 import org.openqa.selenium.WebDriver;
@@ -23,12 +23,11 @@ public class Textarea extends ElementGetters
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
      * @param value - value that shoud be entered into the input
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
-     * @throws InterruptedException
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
-    public void setValue(String caption, String value, int index) throws InterruptedException
+    public void setValue(String caption, String value, int index)
     {
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 
         GetByXpath(String.format(XPATH, caption, index)).clear();
         GetByXpath(String.format(XPATH, caption, index)).sendKeys(value);

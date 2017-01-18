@@ -4,9 +4,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import engine.drivers.DriverInit;
 import cucumber.api.java.Before;
-import engine.utils.DataUtils;
 import engine.utils.SystemUtils;
-
 import java.util.Properties;
 
 /**
@@ -14,10 +12,9 @@ import java.util.Properties;
  */
 public class Base
 {
-    DriverInit driverInit;
+    DriverInit driverInit = new DriverInit();
     public static final String ENV = System.getProperty("env");
     public static final Properties PROPERTIES = SystemUtils.loadProperties(ENV, System.getProperty("propertiesFile"));
-    public static final Long TEST_START_TIME = new DataUtils().getCurrentTimeMillis();
     public static Integer SLEEP_DELAY = null;
     public static Integer QUOTES_DELAY = null;
     public static Integer TRANSITION_DELAY = null;
@@ -37,6 +34,11 @@ public class Base
         }
     }
 
+    /**
+     * Executed before every test
+     *
+     * @param scenario - contains scenario related information
+     */
     @Before
     public void setUp(Scenario scenario)
     {
@@ -49,13 +51,14 @@ public class Base
             browser = "chrome";
         }
 
-        this.driverInit = new DriverInit();
-        this.driverInit.set_driver(browser, "some SCENARIO");
+//        this.driverInit = new DriverInit();
+        this.driverInit.set_driver(browser, SCENARIO.getName());
     }
 
     @After
     public void tearDown() throws InterruptedException
     {
-//        this.driverInit.close();
+        this.driverInit.finish_reporting();
+        this.driverInit.close();
     }
 }

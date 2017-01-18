@@ -3,13 +3,16 @@ package somepackage.glue.awsion;
 import engine.utils.SystemUtils;
 import somepackage.entities.TestEntity;
 import somepackage.pages.awsion.AwsIonQuestionnairePage;
-
 import java.io.File;
-
 import static somepackage.glue.awsion.Base.ENV;
 
 /**
  * Created by Andrity Zhuk on 12/8/2016.
+ */
+
+/**
+ * This class contains references to all pages and auxiliary classes
+ * in order to avoid 'noise' in DefinitionSteps classes
  */
 public class PageRegistry
 {

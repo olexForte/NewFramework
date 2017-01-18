@@ -39,7 +39,7 @@ public class AbstractPage
         //common places
         this.utils = new SystemUtils();
 
-        //Access to class, which provides search of elements
+        //Access to class, which provides search of questionnairePageElements
         //by various methods
         this.Element = new ElementGetters(this.driver);
         this.Dropdown = new SelectGetters(this.driver);
@@ -47,25 +47,6 @@ public class AbstractPage
 
 //        DriverInit.LOGGER.info("Helpers initialized...");
     }
-
-
-    //    //Finds links by text
-//    protected WebElement find_link_by_custom_text(String value)
-//    {
-//        WebElement element = null;
-//
-//        try
-//        {
-////            this.implicit_wait(10);
-//            element = this.driver.findElement(By.partialLinkText(value));
-//        }
-//        catch(ElementNotVisibleException e)
-//        {
-//            e.printStackTrace();
-//        }
-//
-//        return element;
-//    }
 
 
     //Returns Select object
@@ -257,7 +238,7 @@ public class AbstractPage
 //    }
 //
     //Takes screenshot
-    protected byte[] takeScreenshot(String file_name)
+    public byte[] takeScreenshot(String file_name)
     {
         byte[] scrFile = null;
 

@@ -1,4 +1,4 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 import engine.utils.DataUtils;
 import engine.utils.elementUtils.ElementGetters;
@@ -25,17 +25,16 @@ public class Input extends ElementGetters
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
      * @param value - value that should be entered into the input
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
-     * @throws InterruptedException
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
-    public void setValue(String caption, String value, int index) throws InterruptedException
+    public void setValue(String caption, String value, int index)
     {
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 
         GetByXpath(String.format(XPATH, caption, index)).clear();
         GetByXpath(String.format(XPATH, caption, index)).sendKeys(value);
 
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
     }
 
     /**
@@ -45,17 +44,16 @@ public class Input extends ElementGetters
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
      * @param value - value that should be entered into the input
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
-     * @throws InterruptedException
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
-    public void setValueAndTab(String caption, String value, int index) throws InterruptedException
+    public void setValueAndTab(String caption, String value, int index)
     {
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 
         GetByXpath(String.format(XPATH, caption, index)).clear();
         GetByXpath(String.format(XPATH, caption, index)).sendKeys(value, Keys.TAB);
 
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
     }
 
     /**
@@ -78,15 +76,14 @@ public class Input extends ElementGetters
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
      * @param value - value that should be entered into the input
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      * @param tailLength - specifies how many random characters should be added
-     * @throws InterruptedException
      */
-    public void setValueWithRandomTail(String caption, String value, int index, int tailLength) throws InterruptedException
+    public void setValueWithRandomTail(String caption, String value, int index, int tailLength)
     {
         DataUtils dataUtils = new DataUtils();
 
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 
         GetByXpath(String.format(XPATH, caption, index)).clear();
         GetByXpath(String.format(XPATH, caption, index)).sendKeys(value + dataUtils.getRandomChars(tailLength));

@@ -1,7 +1,9 @@
 package engine.utils.elementUtils;
 
 import engine.drivers.DriverInit;
+import engine.helpers.AbstractPage;
 import engine.utils.SystemUtils;
+import engine.utils.seleniumUtils.ReportingUtils;
 import engine.utils.seleniumUtils.WaitHelper;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +18,7 @@ public class BaseElement
     public WebDriver driver;
     public SystemUtils utils;
     public WaitHelper waits;
+    public ReportingUtils reportingUtils;
 
     public BaseElement()
     {
@@ -23,6 +26,7 @@ public class BaseElement
         this.driver = driver_init.get_driver();
         this.utils = new SystemUtils();
         this.waits = new WaitHelper(this.driver);
+        this.reportingUtils = new ReportingUtils(this.driver);
     }
 
     public BaseElement(WebDriver driver)
@@ -30,6 +34,7 @@ public class BaseElement
         this.driver = driver;
         this.utils = new SystemUtils();
         this.waits = new WaitHelper(this.driver);
+        this.reportingUtils = new ReportingUtils(this.driver);
     }
 
 

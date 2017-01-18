@@ -1,8 +1,7 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 import engine.utils.elementUtils.ElementGetters;
 import org.openqa.selenium.WebDriver;
-import org.testng.log4testng.Logger;
 
 /**
  * Created by Andrity Zhuk on 12/9/2016.
@@ -20,7 +19,7 @@ public class Button extends ElementGetters
      * Clicks on the button
      *
      * @param value - text, written on the button
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
     public void clickOn(String value, int index)
     {

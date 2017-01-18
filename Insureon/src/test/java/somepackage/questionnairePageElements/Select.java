@@ -1,7 +1,6 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 import engine.utils.elementUtils.SelectGetters;
-import org.apache.commons.lang3.ObjectUtils;
 import org.openqa.selenium.WebDriver;
 import org.testng.log4testng.Logger;
 
@@ -20,14 +19,6 @@ public class Select extends SelectGetters
 
     public void selectOption(String caption, String value, int index)
     {
-        try
-        {
-            GetByXpath(String.format(XPATH, caption, index)).selectByVisibleText(value);
-        }
-        catch (Exception e)
-        {
-            Logger.getLogger(Select.class).error("Caption: " + caption);
-            Logger.getLogger(Select.class).error(e.getStackTrace());
-        }
+        GetByXpath(String.format(XPATH, caption, index)).selectByVisibleText(value);
     }
 }

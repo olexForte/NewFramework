@@ -1,21 +1,13 @@
 package engine.utils.seleniumUtils;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import engine.drivers.DriverInit;
-import engine.report.Reporter;
 import engine.utils.SystemUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeoutException;
-import java.util.function.Function;
-
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
@@ -25,27 +17,19 @@ public class WaitHelper
 {
     DriverInit driver_init;
     protected WebDriver driver;
-//    protected Reporter reporter;
     SystemUtils utils;
 
     public WaitHelper()
     {
         this.driver_init = new DriverInit();
         this.driver = driver_init.get_driver();
-//        this.reporter = new Reporter();
         this.utils = new SystemUtils();
     }
 
     public WaitHelper(WebDriver driver)
     {
         this.driver = driver;
-//        this.reporter = new Reporter();
         this.utils = new SystemUtils();
-    }
-
-    public void gen_pass()
-    {
-
     }
 
     public void implicit_wait(long time)
@@ -68,11 +52,7 @@ public class WaitHelper
                     .ignoring(StaleElementReferenceException.class)
                     .withTimeout(timeout, SECONDS)
                     .pollingEvery(1, SECONDS);
-            present = wait.until(new ExpectedCondition<Boolean>() {
-                public Boolean apply(WebDriver driver) {
-                    return element.isDisplayed();
-                }
-            });
+            present = wait.until((ExpectedCondition<Boolean>) driver -> element.isDisplayed());
         }
         catch (Exception e)
         {
@@ -82,6 +62,13 @@ public class WaitHelper
         return present;
     }
 
+    /**
+     * Waits for the element to be found and returns it
+     *
+     * @param by - by locator to find the element
+     * @param timeout - timeout to wait for element
+     * @return element
+     */
     public WebElement waitForElement(final By by, int timeout)
     {
         WebDriverWait wait = (WebDriverWait) new WebDriverWait(this.driver, timeout)
@@ -89,19 +76,17 @@ public class WaitHelper
                 .withTimeout(timeout, SECONDS)
                 .pollingEvery(1, SECONDS);
 
-        WebElement element = wait.until((ExpectedCondition<WebElement>) driver -> {
-//                try {
-//                    wait(timeout);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-            return driver.findElement(by);
-        });
+        WebElement element = wait.until((ExpectedCondition<WebElement>) driver ->
+                driver.findElement(by));
 
         return element;
     }
 
-    //Sleeps
+    /**
+     *
+     *
+     * @param time
+     */
     public void sleep(long time)
     {
         try

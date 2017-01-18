@@ -1,4 +1,4 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 /**
  * Created by Andrity Zhuk on 12/9/2016.

@@ -90,8 +90,8 @@ airport;FALSE;yesnoradiobutton
 install/finish tile;FALSE;yesnoradiobutton
 hardwood floor;FALSE;yesnoradiobutton
 work performed outside;10;inputboxwithtab
-Ladders;TRUE;reversecheckbox
-Train all employees on proper ladder use;TRUE;reversecheckbox
+Ladders;TRUE;reversedcheckbox
+Train all employees on proper ladder use;TRUE;reversedcheckbox
 ;;;
 #Contractor Services
 Rental of Equipment to Others;TRUE;checkbox
@@ -100,15 +100,15 @@ Structural Work;TRUE;checkbox
 or safety code violations;FALSE;yesnoradiobutton
 Any catastrophe exposure;FALSE;yesnoradiobutton
 any materials considered to be hazardous;FALSE;yesnoradiobutton
-None of the above;TRUE;reversecheckbox;1
-None of the Above;TRUE;reversecheckbox;1
-None of the above;TRUE;reversecheckbox;2
-None of the above;TRUE;reversecheckbox;3
-None of the above;TRUE;reversecheckbox;4
+None of the above;TRUE;reversedcheckbox;1
+None of the Above;TRUE;reversedcheckbox;1
+None of the above;TRUE;reversedcheckbox;2
+None of the above;TRUE;reversedcheckbox;3
+None of the above;TRUE;reversedcheckbox;4
 to report or permit the storage;FALSE;yesnoradiobutton
-None of the above;TRUE;reversecheckbox;5
-None of the above;TRUE;reversecheckbox;6
-None of the above;TRUE;reversecheckbox;7
+None of the above;TRUE;reversedcheckbox;5
+None of the above;TRUE;reversedcheckbox;6
+None of the above;TRUE;reversedcheckbox;7
 comment on any other information regarding your experience;test;textarea
 ;;;
 #Insurance History
@@ -160,9 +160,9 @@ experience rated;FALSE;yesnoradiobutton
 group transportation provided;FALSE;yesnoradiobutton
 operations include digging;FALSE;yesnoradiobutton
 required safety guarding on all machinery;FALSE;yesnoradiobutton
-None of the Above;TRUE;reversecheckbox;1
+None of the Above;TRUE;reversedcheckbox;1
 provide material handling;FALSE;yesnoradiobutton
-None of the above;TRUE;reversecheckbox;1
+None of the above;TRUE;reversedcheckbox;1
 personal protective equipment is not utilized;test;textarea
 industrial or nuclear work;0;inputboxwithtab
 written safety program;FALSE;yesnoradiobutton

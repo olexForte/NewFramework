@@ -1,4 +1,4 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 import engine.utils.elementUtils.ElementGetters;
 import org.openqa.selenium.Keys;
@@ -24,7 +24,7 @@ public class Checkbox extends ElementGetters
      * @param caption - text by which the element is found
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
     public void check(String caption, int index)
     {
@@ -37,11 +37,11 @@ public class Checkbox extends ElementGetters
      * @param caption - text by which the element is found
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
-    public void checkReversed(String caption, int index) throws InterruptedException
+    public void checkReversed(String caption, int index)
     {
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).click();
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).sendKeys(Keys.TAB);

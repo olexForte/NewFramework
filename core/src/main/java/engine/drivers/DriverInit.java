@@ -1,6 +1,7 @@
 package engine.drivers;
 
 import engine.report.ComplexReportFactory;
+import engine.report.Reporter;
 import engine.utils.SystemUtils;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
@@ -18,8 +19,7 @@ public class DriverInit
 {
     SystemUtils utils = new SystemUtils();
 
-    private String test_title;
-    public final static Logger LOGGER = Logger.getLogger(DriverInit.class);
+    private static String test_title;
 //    private String test_description;
 
     private static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
@@ -32,14 +32,7 @@ public class DriverInit
      */
     public void set_driver(String driver, String scenario)
     {
-        this.test_title = scenario;
-
-        BasicConfigurator.configure();
-        Logger.getRootLogger().setLevel(Level.WARN);
-
-        LOGGER.setLevel(Level.OFF);
-
-        LOGGER.info("Starting " + driver.toUpperCase() + " driver...");
+        test_title = scenario;
 
         if(driver != null)
         {
@@ -52,7 +45,7 @@ public class DriverInit
             }
             else if(driver.toLowerCase().equals("chrome"))
             {
-                System.setProperty("webdriver.chrome.driver", utils.get_chrome_path());
+                System.setProperty("webdriver.chrome.driver", utils.getChromePath());
 
                 ChromeOptions chromeOptions = new ChromeOptions();
 //                chromeOptions.addArguments("no-sandbox");
@@ -64,15 +57,15 @@ public class DriverInit
         }
         else
         {
-            System.setProperty("webdriver.chrome.driver", utils.get_chrome_path());
+            System.setProperty("webdriver.chrome.driver", utils.getChromePath());
             this.driver = new ChromeDriver();
         }
 
-        LOGGER.trace("Maximizing window");
+        ComplexReportFactory.getTest(test_title);
         this.driver.manage().window().maximize();
 
         threadLocalDriver.set(this.driver);
-        ComplexReportFactory.getTest(this.test_title);
+        ComplexReportFactory.getTest(test_title);
     }
 
     //Returns the WebDriver instance
@@ -90,16 +83,15 @@ public class DriverInit
     //Close the browser
     public void close()
     {
-        LOGGER.trace("Closing the driver");
-        finish_reporting(this.test_title);
+        Reporter.getInstance().INFO("Closing browser...");
+        finish_reporting();
         this.get_driver().close();
     }
 
-    //TODO: remove
-    private void finish_reporting(String test_title)
+    public void finish_reporting()
     {
-//        ComplexReportFactory.closeTest(test_title);
-//        ComplexReportFactory.closeReport();
+        ComplexReportFactory.closeTest(test_title);
+        ComplexReportFactory.closeReport();
     }
 
 }

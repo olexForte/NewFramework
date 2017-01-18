@@ -2,6 +2,8 @@ package engine.utils.elementUtils;
 
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 //import engine.drivers.DriverInit;
+import engine.drivers.DriverInit;
+import engine.report.Reporter;
 import engine.utils.seleniumUtils.WaitHelper;
 import engine.utils.SystemUtils;
 import org.openqa.selenium.*;
@@ -27,16 +29,7 @@ public class ElementGetters extends BaseElement
     {
         WebElement element = null;
 
-        try
-        {
-            element = waits.waitForElement(elem, 7);
-//            element = driver.findElement(elem);
-        }
-        catch(Exception e)
-        {
-            System.out.println("Element cannot be found");
-            e.getMessage();
-        }
+        element = waits.waitForElement(elem, 7);
 
         return element;
     }
@@ -52,6 +45,7 @@ public class ElementGetters extends BaseElement
         catch(Exception e)
         {
             System.out.println("Element cannot be found");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
@@ -66,9 +60,12 @@ public class ElementGetters extends BaseElement
         try
         {
             element = this.get_element(by_element);
+            Reporter.getInstance().PASS("Element with NAME '" + name + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element with NAME '" + name + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
@@ -83,9 +80,12 @@ public class ElementGetters extends BaseElement
         try
         {
             element = this.get_element(by_element);
+            Reporter.getInstance().PASS("Element '" + element_name + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element '" + element_name + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
@@ -100,9 +100,12 @@ public class ElementGetters extends BaseElement
         try
         {
             element = this.get_element(by_element);
+            Reporter.getInstance().PASS("Element with ID '" + id + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element with ID '" + id + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
@@ -113,12 +116,16 @@ public class ElementGetters extends BaseElement
     {
         WebElement element = null;
         By by_element = By.id(id);
+
         try
         {
             element = this.get_element(by_element);
+            Reporter.getInstance().PASS("Element '" + element_name + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element '" + element_name + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
@@ -133,9 +140,12 @@ public class ElementGetters extends BaseElement
         try
         {
             element = get_element(by_element);
+            Reporter.getInstance().PASS("Element with XPATH '" + xpath + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element with XPATH '" + xpath + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.printStackTrace();
         }
 
@@ -150,41 +160,50 @@ public class ElementGetters extends BaseElement
         try
         {
             element = get_element(by_element);
+            Reporter.getInstance().PASS("Element '" + element_name + "' is found...");
         }
         catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element '" + element_name + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.printStackTrace();
         }
 
         return  element;
     }
 
-    public WebElement GetByBy(By by)
+    public WebElement GetBy(By by)
     {
         WebElement element = null;
 
         try
         {
             element = get_element(by);
+            Reporter.getInstance().PASS("Element with BY '" + by.toString() + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element with BY '" + by.toString() + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
         return  element;
     }
 
-    public WebElement GetByBy(By by, int index)
+    public WebElement GetBy(By by, int index)
     {
         WebElement element = null;
 
         try
         {
             element = get_element_by_index(by, index);
+            Reporter.getInstance().PASS("Element with BY '" + by.toString() + "' is found...");
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
+            Reporter.getInstance().FAIL("Element with BY '" + by.toString() + "' cannot be found...");
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.getMessage();
         }
 
@@ -204,6 +223,7 @@ public class ElementGetters extends BaseElement
         }
         catch(ElementNotVisibleException e)
         {
+            Reporter.getInstance().CAPTURE_SCREENSHOT(reportingUtils.takeScreenshot(String.valueOf(System.currentTimeMillis())).getAbsolutePath());
             e.printStackTrace();
         }
 

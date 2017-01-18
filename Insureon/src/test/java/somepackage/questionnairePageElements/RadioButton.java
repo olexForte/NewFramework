@@ -1,9 +1,8 @@
-package somepackage.elements;
+package somepackage.questionnairePageElements;
 
 import engine.utils.elementUtils.ElementGetters;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import somepackage.glue.awsion.Base;
 
 /**
@@ -28,11 +27,11 @@ public class RadioButton extends ElementGetters
      *                can be different from the real caption value is
      * @param value - this is used as value. It is checked and transformed in 'if' condition,
      *              since value in dataset can be different from what is actual value
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
-    public void setRadioTo(String caption, String value, int index) throws InterruptedException
+    public void setRadioTo(String caption, String value, int index)
     {
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 
         if (Boolean.parseBoolean(value))
         {
@@ -53,12 +52,11 @@ public class RadioButton extends ElementGetters
      * @param caption - text by which the element is found
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
-     * @throws InterruptedException
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
-    public void setAddressRadioTo(String caption, int index) throws InterruptedException
+    public void setAddressRadioTo(String caption, int index)
     {
-        Thread.sleep(Base.SLEEP_DELAY);
+        waits.sleep(Base.SLEEP_DELAY);
 //        String captionString = caption.toLowerCase();
 //        captionString = captionString.substring(0, 1).toUpperCase() + captionString.substring(1);
 
@@ -71,7 +69,7 @@ public class RadioButton extends ElementGetters
      * @param caption - text by which the element is found
      *                this should be revised with Firebug because what user sees on the page
      *                can be different from the real caption value is
-     * @param index - used to avoid confusion if a couple of similar elements are found on the page
+     * @param index - used to avoid confusion if a couple of similar questionnairePageElements are found on the page
      */
     public void chooseReversedRadioTo(String caption, int index)
     {

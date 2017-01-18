@@ -31,7 +31,7 @@ public class CreateClientPage extends AbstractPage
 
     public void enterBusinessName(String businessName)
     {
-        Element.GetByBy(businessNameInput).sendKeys(businessName);
+        Element.GetBy(businessNameInput).sendKeys(businessName);
     }
 //
 //    //TODO: This should be re-done. Robot is implemented as workaround
@@ -62,88 +62,88 @@ public class CreateClientPage extends AbstractPage
 
     public void enterFirstName(String fName)
     {
-        Element.GetByBy(firstNameInput).sendKeys(fName);
+        Element.GetBy(firstNameInput).sendKeys(fName);
     }
 
     public void enterLastName(String lName)
     {
-        Element.GetByBy(lastNameInput).sendKeys(lName);
+        Element.GetBy(lastNameInput).sendKeys(lName);
     }
 
     public void enterPrimaryEmail(String email)
     {
-        Element.GetByBy(primaryEmailInput).sendKeys(email);
+        Element.GetBy(primaryEmailInput).sendKeys(email);
     }
 
     public void enterPhone(String phone)
     {
-        Element.GetByBy(phoneInput).sendKeys(phone);
+        Element.GetBy(phoneInput).sendKeys(phone);
     }
 
     public void enterPrimaryStreet1(String street)
     {
-        Element.GetByBy(street1Input, 0).sendKeys(street);
+        Element.GetBy(street1Input, 0).sendKeys(street);
     }
 
     public void enterPrimaryStreet2(String street)
     {
-        Element.GetByBy(street2Input, 0).sendKeys(street);
+        Element.GetBy(street2Input, 0).sendKeys(street);
     }
 
     public void enterPrimaryCity(String city)
     {
-        Element.GetByBy(cityInput, 0).sendKeys(city);
+        Element.GetBy(cityInput, 0).sendKeys(city);
     }
 
     public void selectPrimaryState(String state)
     {
-        Element.GetByBy(stateInput, 0).sendKeys(state);
+        Element.GetBy(stateInput, 0).sendKeys(state);
     }
 
     public void enterPrimaryCounty(String county)
     {
-        Element.GetByBy(countyInput, 0).sendKeys(county);
+        Element.GetBy(countyInput, 0).sendKeys(county);
     }
 
     public void enterPrimaryZip(String zip)
     {
-        Element.GetByBy(zipInput, 0).sendKeys(zip);
+        Element.GetBy(zipInput, 0).sendKeys(zip);
     }
 
 
     public void enterMailingStreet1(String street)
     {
-        Element.GetByBy(street1Input, 1).sendKeys(street);
+        Element.GetBy(street1Input, 1).sendKeys(street);
     }
 
     public void enterMailingStreet2(String street)
     {
-        Element.GetByBy(street2Input, 1).sendKeys(street);
+        Element.GetBy(street2Input, 1).sendKeys(street);
     }
 
     public void enterMailingCity(String city)
     {
-        Element.GetByBy(cityInput, 1).sendKeys(city);
+        Element.GetBy(cityInput, 1).sendKeys(city);
     }
 
     public void selectMailingState(String state)
     {
-        Element.GetByBy(stateInput, 1).sendKeys(state);
+        Element.GetBy(stateInput, 1).sendKeys(state);
     }
 
     public void enterMailingCounty(String county)
     {
-        Element.GetByBy(countyInput, 1).sendKeys(county);
+        Element.GetBy(countyInput, 1).sendKeys(county);
     }
 
     public void enterMailingZip(String zip)
     {
-        Element.GetByBy(zipInput, 1).sendKeys(zip);
+        Element.GetBy(zipInput, 1).sendKeys(zip);
     }
 
     public void clickOnCreateClientButton()
     {
-        Element.GetByBy(createClientButton).click();
+        Element.GetBy(createClientButton).click();
     }
 
 //    public String getClientID()

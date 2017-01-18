@@ -16,10 +16,10 @@ public class AtomLoginPage extends AbstractPage
 
     public void loginToAtom(String username, String password)
     {
-        Element.GetByBy(loginDropdown).click();
-        Element.GetByBy(usernameInput).sendKeys(username);
-        Element.GetByBy(passwordInput).sendKeys(password);
-        Element.GetByBy(loginBtn).click();
+        Element.GetBy(loginDropdown).click();
+        Element.GetBy(usernameInput).sendKeys(username);
+        Element.GetBy(passwordInput).sendKeys(password);
+        Element.GetBy(loginBtn).click();
     }
 
 

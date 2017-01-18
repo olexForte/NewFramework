@@ -21,13 +21,13 @@ public class ComplexReportFactory
 
     private synchronized static ExtentReports getExtentReport()
     {
-        SystemUtils utils = new SystemUtils();
+        SystemUtils systemUtils = new SystemUtils();
 
         if (reporter == null)
         {
-            reporter = new ExtentReports(utils.get_app_root() + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "reports" +
-                    File.separator + utils.get_date() + "_Report.html", false, DisplayOrder.NEWEST_FIRST);
-            reporter.addSystemInfo("Host Name", "Andriy Zhuk")
+            reporter = new ExtentReports(systemUtils.get_app_root() + File.separator + "src" + File.separator + "test" + File.separator + "resources" + File.separator + "reports" +
+                    File.separator + systemUtils.get_date() + "_Report.html", false, DisplayOrder.NEWEST_FIRST);
+            reporter.addSystemInfo("Host Name", systemUtils.get_computer_user())
                     .addSystemInfo("Environment", "QA");
         }
         return reporter;
@@ -35,11 +35,13 @@ public class ComplexReportFactory
 
     public synchronized static ExtentTest getTest(String testName, String testDescription) {
 
+        SystemUtils systemUtils = new SystemUtils();
+
         // if this test has already been created return
         if (!nameToTestMap.containsKey(testName)) {
             Long threadID = Thread.currentThread().getId();
             ExtentTest test = getExtentReport().startTest(testName, testDescription);
-            test.assignAuthor("Andriy Zhuk");
+            test.assignAuthor(systemUtils.get_computer_user());
             nameToTestMap.put(testName, test);
             threadToExtentTestMap.put(threadID, testName);
         }
@@ -48,11 +50,13 @@ public class ComplexReportFactory
 
     public synchronized static ExtentTest getTest(String testName, String testDescription, Collection<String> tags) {
 
+        SystemUtils systemUtils = new SystemUtils();
+
         // if this test has already been created return
         if (!nameToTestMap.containsKey(testName)) {
             Long threadID = Thread.currentThread().getId();
             ExtentTest test = getExtentReport().startTest(testName, testDescription);
-            test.assignAuthor("Andriy Zhuk");
+            test.assignAuthor(systemUtils.get_computer_user());
 
             for (String tag : tags)
             {
@@ -106,7 +110,7 @@ public class ComplexReportFactory
     public synchronized static void closeReport() {
         if (reporter != null) {
             reporter.flush();
-//            reporter.close();
+            reporter.close();
         }
     }
 }

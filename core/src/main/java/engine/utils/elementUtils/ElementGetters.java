@@ -1,8 +1,5 @@
 package engine.utils.elementUtils;
 
-//import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-//import engine.drivers.DriverInit;
-import engine.drivers.DriverInit;
 import engine.report.Reporter;
 import engine.utils.seleniumUtils.WaitHelper;
 import engine.utils.SystemUtils;
@@ -25,15 +22,28 @@ public class ElementGetters extends BaseElement
         this.waits = new WaitHelper(this.driver);
     }
 
+    /**
+     * Takes by locator and converts it to WebElement
+     *
+     * @param elem - element to be found and converted to WebElement
+     * @return element
+     */
     protected WebElement get_element(By elem)
     {
-        WebElement element = null;
+        WebElement element;
 
         element = waits.waitForElement(elem, 7);
 
         return element;
     }
 
+    /**
+     * TODO: To be reconsidered
+     *
+     * @param elem
+     * @param index
+     * @return
+     */
     protected WebElement get_element_by_index(By elem, int index)
     {
         WebElement element = null;
@@ -52,6 +62,12 @@ public class ElementGetters extends BaseElement
         return element;
     }
 
+    /**
+     * Returns element with specified name
+     *
+     * @param name - element name to find element by
+     * @return element
+     */
     protected WebElement GetByName(String name)
     {
         WebElement element = null;
@@ -72,6 +88,13 @@ public class ElementGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified name
+     *
+     * @param name - element name to find element by
+     * @param element_name - element description
+     * @return
+     */
     public WebElement GetByName(String name, String element_name)
     {
         WebElement element = null;
@@ -92,6 +115,12 @@ public class ElementGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified id
+     *
+     * @param id - element id to find element by
+     * @return element
+     */
     public WebElement GetById(String id)
     {
         WebElement element = null;
@@ -112,6 +141,13 @@ public class ElementGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified id
+     *
+     * @param id - element id to find element by
+     * @param element_name
+     * @return element
+     */
     public WebElement GetById(String id, String element_name)
     {
         WebElement element = null;
@@ -132,6 +168,12 @@ public class ElementGetters extends BaseElement
         return element;
     }
 
+    /**
+     * Returns element with specified xpath
+     *
+     * @param xpath - element xpath to find element by
+     * @return element
+     */
     public WebElement GetByXpath(String xpath)
     {
         WebElement element = null;
@@ -152,6 +194,13 @@ public class ElementGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified xpath
+     *
+     * @param xpath - element xpath to find element by
+     * @param element_name - element description
+     * @return element
+     */
     public WebElement GetByXpath(String xpath, String element_name)
     {
         WebElement element = null;
@@ -172,6 +221,12 @@ public class ElementGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified 'By' locator
+     *
+     * @param by - 'By' locator to find element by
+     * @return element
+     */
     public WebElement GetBy(By by)
     {
         WebElement element = null;
@@ -191,6 +246,13 @@ public class ElementGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified 'By' locator
+     *
+     * @param by - 'By' locator to find element by
+     * @param index - element index to find element by
+     * @return element
+     */
     public WebElement GetBy(By by, int index)
     {
         WebElement element = null;
@@ -229,50 +291,4 @@ public class ElementGetters extends BaseElement
 
         return element;
     }
-
-    //Sets 'element_name' attribute to element, which is retreived later
-    //for reporting - the name is used in reports as user-friendly name for element
-    void set_element_attribute(String element_id, String locator_type, String attr, String value)
-    {
-        String script = "";
-        String method = "";
-        if(locator_type.toLowerCase().equals("id"))
-        {
-            method = "getElementById";
-        }
-        else if(locator_type.toLowerCase().equals("name"))
-        {
-            method = "getElementsByName";
-        }
-        else if(locator_type.toLowerCase().equals("xpath"))
-        {
-            method = "getElementByXPath";
-
-        }
-        else if(locator_type.toLowerCase().equals("css"))
-        {
-            method = "getElementByCssSelector";
-        }
-
-        if (method == "getElementsByName")
-        {
-            script = "document." + method + "('" + element_id + "')[0].setAttribute('" + attr + "', '" + value + "')";
-        }
-        else
-        {
-            script = "document." + method + "('" + element_id + "').setAttribute('" + attr + "', '" + value + "')";
-        }
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript(script);
-    }
-
-//    private javascript_xpath(String xpath)
-//    {
-//        String script = null;
-//        script = "document.evaluate(" + xpath  + "), document, null, XPathResult.ANY_TYPE, null";
-//
-//        JavascriptExecutor js = (JavascriptExecutor) this.driver;
-//        js.executeScript(script);
-//    }
 }

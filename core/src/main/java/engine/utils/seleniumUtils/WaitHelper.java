@@ -83,9 +83,9 @@ public class WaitHelper
     }
 
     /**
+     * Stops the thread for specified time
      *
-     *
-     * @param time
+     * @param time - thread sleep time (milliseconds)
      */
     public void sleep(long time)
     {

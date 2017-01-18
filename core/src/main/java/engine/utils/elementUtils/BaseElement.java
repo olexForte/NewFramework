@@ -37,7 +37,11 @@ public class BaseElement
         this.reportingUtils = new ReportingUtils(this.driver);
     }
 
-
+    /**
+     * Scrolls the page to specific element
+     *
+     * @param element - element to scroll to
+     */
     public void scrollToElementUsingJS(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].focus()", element);

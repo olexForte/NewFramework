@@ -26,15 +26,20 @@ public class SelectGetters extends BaseElement
         this.elements = new ElementGetters(this.driver);
     }
 
+    /**
+     * Returns select element with specified name
+     *
+     * @param name - element name to find element by
+     * @param element_name - element description
+     * @return element
+     */
     public Select GetByName(String name, String element_name)
     {
         Select element = null;
-        By by_element = By.name(name);
 
         try
         {
-            elements.get_element(by_element);
-            element = new Select(elements.get_element(by_element));
+            element = new Select(elements.GetByName(name, element_name));
         }
         catch(Exception e)
         {
@@ -44,17 +49,21 @@ public class SelectGetters extends BaseElement
         return  element;
     }
 
+    /**
+     *
+     * @param id - element id to find element by
+     * @param element_name - element description
+     * @return element
+     */
     public Select GetById(String id, String element_name)
     {
         Select element = null;
-        By by_element = By.id(id);
 
         try
         {
-            elements.get_element(by_element);
-            element = new Select(elements.get_element(by_element));
+            element = new Select(elements.GetById(id, element_name));
         }
-        catch(NullPointerException e)
+        catch(Exception e)
         {
             e.getMessage();
         }
@@ -62,15 +71,19 @@ public class SelectGetters extends BaseElement
         return element;
     }
 
+    /**
+     *
+     *
+     * @param xpath - element xpath to find element by
+     * @return select element
+     */
     public Select GetByXpath(String xpath)
     {
         Select element = null;
-        By by_element = By.xpath(xpath);
 
         try
         {
-            elements.get_element(by_element);
-            element = new Select(elements.get_element(by_element));
+            element = new Select(elements.GetByXpath(xpath));
         }
         catch(Exception e)
         {
@@ -80,15 +93,19 @@ public class SelectGetters extends BaseElement
         return  element;
     }
 
+    /**
+     *
+     * @param xpath - element xpath to find element by
+     * @param element_name element description
+     * @return select element
+     */
     public Select GetByXpath(String xpath, String element_name)
     {
         Select element = null;
-        By by_element = By.xpath(xpath);
 
         try
         {
-            elements.get_element(by_element);
-            element = new Select(elements.get_element(by_element));
+            element = new Select(elements.GetByXpath(xpath, element_name));
         }
         catch(Exception e)
         {
@@ -98,14 +115,19 @@ public class SelectGetters extends BaseElement
         return  element;
     }
 
+    /**
+     * Returns element with specified 'By' locator
+     *
+     * @param by - 'By' locator to find element by
+     * @return select element
+     */
     public Select GetByBy(By by)
     {
         Select element = null;
 
         try
         {
-            elements.get_element(by);
-            element = new Select(elements.get_element(by));
+            element = new Select(elements.GetBy(by));
         }
         catch(Exception e)
         {

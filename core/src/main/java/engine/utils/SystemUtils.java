@@ -58,7 +58,7 @@ public class SystemUtils
      *
      * @return current system user
      */
-    private String get_computer_user()
+    public String get_computer_user()
     {
         return System.getProperty("user.name");
     }

@@ -5,10 +5,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import somepackage.glue.awsion.Base;
 
+import java.util.List;
+
 /**
  * Created by Andrity Zhuk on 12/9/2016.
  */
-public class Checkbox extends ElementGetters
+public class Checkbox extends ElementGetters implements IElement
 {
     private String XPATH = "(//div[contains(., '%s')]/following-sibling::div[@class = 'response']//input[@type = 'checkbox'])[%s]";
     private String REVERSED_XPATH = "(//label[contains(., '%s')]/preceding-sibling::input[@type = 'checkbox'])[%s]";
@@ -45,5 +47,31 @@ public class Checkbox extends ElementGetters
 
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).click();
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).sendKeys(Keys.TAB);
+    }
+
+    @Override
+    public void validate(List<String> datasetElementInfo) {
+
+    }
+
+    @Override
+    public void populate(List<String> datasetElementInfo)
+    {
+        this.check(datasetElementInfo.get(0), Integer.parseInt(datasetElementInfo.get(3)));
+    }
+
+    @Override
+    public void activate(List<String> datasetElementInfo) {
+
+    }
+
+    @Override
+    public void verify(List<String> datasetElementInfo) {
+
+    }
+
+    @Override
+    public void save_value(List<String> datasetElementInfo) {
+
     }
 }

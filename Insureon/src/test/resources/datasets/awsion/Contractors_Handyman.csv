@@ -1,5 +1,5 @@
 #Your company;;;
-zip code of your primary business location;90302;inputbox;
+POPULATE, SAVE_VALUE::zip code of your primary business location;90302;inputbox;1
 the name of your business;IONREGHandy;rnddatainputbox
 ;;;
 My business is not listed;;button

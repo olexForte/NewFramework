@@ -4,7 +4,7 @@ import engine.helpers.AbstractPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import somepackage.glue.awsion.Base;
-import utils.InsureonUtils;
+import utils.InsureonElementUtils;
 
 import java.util.*;
 
@@ -35,7 +35,7 @@ public class AwsIonQuestionnairePage extends AbstractPage
      */
     public void answerQuestions(String dataset)
     {
-        List<List<String>> datasetParentList = new InsureonUtils().getDataSetData(dataset);
+        List<List<String>> datasetParentList = new InsureonElementUtils().getDataSetData(dataset);
 
         try
         {
@@ -43,7 +43,7 @@ public class AwsIonQuestionnairePage extends AbstractPage
             {
                 try
                 {
-                    new InsureonUtils().processElementType(x, driver);
+                    new InsureonElementUtils().processElementType(x, driver);
                 }
                 catch (IndexOutOfBoundsException e)
                 {

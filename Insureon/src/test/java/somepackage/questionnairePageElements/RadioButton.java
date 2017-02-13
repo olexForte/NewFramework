@@ -5,10 +5,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import somepackage.glue.awsion.Base;
 
+import java.util.List;
+
 /**
  * Created by Andrity Zhuk on 12/12/2016.
  */
-public class RadioButton extends ElementGetters
+public class RadioButton extends ElementGetters implements IElement
 {
     private String XPATH = "(//div[contains(., '%s')]/following-sibling::div[@class = 'response']//input[@value = '%s'])[%s]";
     private String ADDRESS_XPATH = "//div[contains(., '%s')]//label[contains(., '%s')]/preceding-sibling::input[@type = 'radio']";
@@ -75,5 +77,29 @@ public class RadioButton extends ElementGetters
     {
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).click();
         GetByXpath(String.format(REVERSED_XPATH, caption, index)).sendKeys(Keys.TAB);
+    }
+
+    @Override
+    public void populate(List<String> datasetElementInfo) {
+
+    }
+
+    public void populate(List<String> datasetElementInfo, Object randomStringTailLength) {
+
+    }
+
+    @Override
+    public void activate() {
+
+    }
+
+    @Override
+    public void verify() {
+
+    }
+
+    @Override
+    public void save_value(List<String> datasetElementInfo) {
+
     }
 }
